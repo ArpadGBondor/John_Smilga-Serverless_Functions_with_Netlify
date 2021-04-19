@@ -9,9 +9,9 @@ async function fetchData() {
     const res = await axios.get('/api/1-hello');
 
     result.innerText = res.data;
-    console.log(res);
+    // console.log(res);
   } catch (error) {
-    console.log(error.response);
+    // console.log(error.response);
     result.innerText = error.response.data;
   }
 }

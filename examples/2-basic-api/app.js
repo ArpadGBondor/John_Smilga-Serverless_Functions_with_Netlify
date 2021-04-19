@@ -22,7 +22,7 @@ async function fetchData() {
       )
       .join(''); // <-- give join empty string parameter, otherwise it will insert commas
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     result.innerText = error.response.data;
   }
 }
