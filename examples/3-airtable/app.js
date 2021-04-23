@@ -7,20 +7,20 @@ async function fetchData() {
     const { data } = await axios('/api/3-airtable');
     result.innerHTML = data
       .map(
-        ({ name, url, price }) => `
-    <article class="product">
-      <img
-        src="${url}"
-        alt="${name}"
-      />
-      <div class="info">
-        <h5>${name}</h5>
-        <h5 class="price">£${price}</h5>
-      </div>
-    </article>`
+        ({ id, name, url, price }) => `
+        <a href="product.html?id=${id}" class="product">
+          <img
+            src="${url}"
+            alt="${name}"
+          />
+          <div class="info">
+            <h5>${name}</h5>
+            <h5 class="price">£${price}</h5>
+          </div>
+        </a>`
       )
       .join('');
   } catch (error) {
-    result.innerText = error.response.data;
+    result.innerHTML = '<h4>There was an error</h4>';
   }
 }
