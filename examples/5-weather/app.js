@@ -24,6 +24,7 @@ form.addEventListener('submit', async function (e) {
     } else if (error.response && error.response.status && error.response.status === 500) {
       alert.innerText = 'Server error.';
     } else {
+      console.log(error);
       alert.innerText = 'Unknown error.';
     }
   }
