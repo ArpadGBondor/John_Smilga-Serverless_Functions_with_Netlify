@@ -19,9 +19,9 @@ form.addEventListener('submit', async function (e) {
     showData(data);
   } catch (error) {
     alert.style.display = 'block';
-    if (error.response.status && error.response.status === 404) {
+    if (error.response && error.response.status && error.response.status === 404) {
       alert.innerText = 'City not found.';
-    } else if (error.response.status && error.response.status === 500) {
+    } else if (error.response && error.response.status && error.response.status === 500) {
       alert.innerText = 'Server error.';
     } else {
       alert.innerText = 'Unknown error.';
