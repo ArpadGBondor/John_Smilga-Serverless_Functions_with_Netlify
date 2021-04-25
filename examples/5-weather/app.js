@@ -30,7 +30,7 @@ form.addEventListener('submit', async function (e) {
   }
 });
 
-function showData() {
+function showData(data) {
   const {
     name,
     clouds: { all: cloud_percent },
