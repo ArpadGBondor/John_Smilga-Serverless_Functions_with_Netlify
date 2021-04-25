@@ -4,9 +4,13 @@ const result = document.querySelector('.result');
 window.addEventListener('load', () => fetchData());
 
 async function fetchData() {
-  result.innerHTML = `<h2>Loading...</h2>`;
-  const { data } = await axios('/api/4-survey');
-  showData(data);
+  try {
+    result.innerHTML = `<h2>Loading...</h2>`;
+    const { data } = await axios('/api/4-survey');
+    showData(data);
+  } catch (error) {
+    result.innerHTML = '<h4>There was an error</h4>';
+  }
 }
 
 function showData(data) {
