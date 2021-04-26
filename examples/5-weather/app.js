@@ -37,19 +37,24 @@ function showData(data) {
     main: { temp, feels_like: temp_feels_like, temp_min, temp_max, pressure },
     sys: { country },
     weather,
-    wind: { speed: wind_speed },
+    wind: { speed: wind_speed, deg: wind_degree },
   } = data;
   const { description, icon } = weather[0];
 
   result.innerHTML = `
   <div class="result-content">
+    <div class="result-header">
       <div>
-          <h3>${name}, ${country} <img src="http://openweathermap.org/images/flags/${country.toLowerCase()}.png"> <br />(${temp}°C)</h3>
-          <p>The weather is currently ${description}.</p>
-          <p>The temperature is between ${temp_min}°C and ${temp_max}°C, and feels like ${temp_feels_like}°C.</p>
-          <p>Wind: ${wind_speed} m/s, Clouds: ${cloud_percent}%, Pressure: ${pressure} hpa</p>
+        <h3>${name}, ${country} <img src="http://openweathermap.org/images/flags/${country.toLowerCase()}.png"></h3>
+        <h3>(${temp}°C)</h3>
       </div>
       <img src = "http://openweathermap.org/img/wn/${icon}@2x.png">
+    </div>
+    <p>The weather is currently ${description}.</p>
+    <p>The temperature is between ${temp_min}°C and ${temp_max}°C, and feels like ${temp_feels_like}°C.</p>
+    <p>Cloudiness: ${cloud_percent}%, Pressure: ${pressure} hpa</p>
+    <p>Wind: ${wind_speed} m/s <img style="vertical-align:middle;height:1.5em;transform:rotate(${wind_degree}deg);" src="arrow-alt-circle-down.svg"  /></p>
   </div>    
+
   `;
 }
