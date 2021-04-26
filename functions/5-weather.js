@@ -1,4 +1,5 @@
-const { default: axios } = require('axios');
+require('dotenv').config();
+const axios = require('axios');
 
 exports.handler = async (event, context, callback) => {
   const notSupportedMethod = {
