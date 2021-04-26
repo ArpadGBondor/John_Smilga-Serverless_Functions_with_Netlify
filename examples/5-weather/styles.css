@@ -53,6 +53,15 @@ input[type='text'] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+@media screen and (min-width: 400px) {
+  .result-header {
+    flex-direction: row;
+    text-align: left;
+  }
 }
 
 .result h3 {
