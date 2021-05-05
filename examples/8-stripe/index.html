@@ -27,7 +27,12 @@
       <!-- Display a payment form -->
       <form id="payment-form">
         <!-- custom stuff -->
-        <p>Test Card Number: 4242 4242 4242 4242</p>
+        <p>Test Card Numbers</p>
+        <ul>
+          <li>Payment succeeds: <span>4242 4242 4242 4242</span></li>
+          <li>Payment requires authentication: <span>4000 0025 0000 3155</span></li>
+          <li>Payment is declined: <span>4000 0000 0000 9995</span></li>
+        </ul>
         <!-- end custom stuff -->
         <div id="card-element"><!--Stripe.js injects the Card Element--></div>
         <button id="submit">
